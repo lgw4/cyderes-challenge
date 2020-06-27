@@ -8,6 +8,7 @@ module "networking" {
 module "elasticsearch" {
   source    = "./modules/elasticsearch"
   namespace = var.namespace
+  region    = var.region
   vpc       = module.networking.vpc
   sg        = module.networking.sg
 }
