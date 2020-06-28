@@ -12,3 +12,11 @@ module "elasticsearch" {
   vpc       = module.networking.vpc
   sg        = module.networking.sg
 }
+
+module "ecs" {
+  source      = "./modules/ecs"
+  namespace   = var.namespace
+  nginx_image = var.nginx_image
+  vpc         = module.networking.vpc
+  sg          = module.networking.sg
+}
